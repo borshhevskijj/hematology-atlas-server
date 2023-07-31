@@ -4,7 +4,7 @@ import {
   getBloodCellsByHematopoiesisHandler,
   getBloodCellsByNameHandler,
   getAllBloodCellsNamesHandler,
-} from "./controller/controller.js";
+} from "../controller/controller.js";
 
 const app = express();
 const PORT = 5000;
