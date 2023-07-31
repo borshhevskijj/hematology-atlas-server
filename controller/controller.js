@@ -58,22 +58,6 @@ export const getBloodCellsDescriptionByNameHandler = (request) => {
   });
 };
 
-// const getImagesByHemopoiesisHandler = (request) => {
-//   return new Promise((resolve, reject) => {
-//     bloodCellModel.getImagesByHemopoiesis(request.params.type, (err, rows) => {
-//       if (err) {
-//         reject(err);
-//       } else if (rows && rows.length > 0) {
-//         resolve(rows);
-//       } else {
-//         reject({
-//           error: "cell not found",
-//         });
-//       }
-//     });
-//   });
-// };
-
 const getImagesHandler = (modelMethod, requestParams) => {
   console.log("qwe");
   return new Promise((resolve, reject) => {
