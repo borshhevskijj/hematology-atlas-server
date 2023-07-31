@@ -1,7 +1,7 @@
 import BloodCellModel from "../model/model.js";
-// import nodeCache from "node-cache";
+import nodeCache from "node-cache";
 const bloodCellModel = new BloodCellModel();
-// const cache = new nodeCache();
+const cache = new nodeCache();
 
 export const firstCharToUpperCase = (word) => {
   const lowerCaseWord = word.toLowerCase();
@@ -76,17 +76,17 @@ const getImagesHandler = (modelMethod, requestParams) => {
 
 export const getBloodCellsByHematopoiesisHandler = async (request, response) => {
   try {
-    // const cachedResult = cache.get(request.params.type);
-    // if (cachedResult) {
-    //   response.status(200).json(cachedResult);
-    //   return;
-    // }
+    const cachedResult = cache.get(request.params.type);
+    if (cachedResult) {
+      response.status(200).json(cachedResult);
+      return;
+    }
     const images = await getImagesHandler(bloodCellModel.getImagesByHemopoiesis, request.params.type);
     const bloodCellDescription = await getBloodCellsDescriptionByHemopoiesisHandler(request);
 
     const result = filterData([images, bloodCellDescription]);
     response.status(200).json(result);
-    // cache.set(request.params.type, result, 3600);
+    cache.set(request.params.type, result, 3600);
   } catch (error) {
     response.status(500).json({ error: error.message });
   }
@@ -97,17 +97,17 @@ export const getBloodCellsByNameHandler = async (request, response) => {
   console.log("qwe");
   const requestPramsName = firstCharToUpperCase(request.params.name);
   try {
-    // const cachedResult = cache.get(requestPramsName);
-    // if (cachedResult) {
-    //   response.status(200).json(cachedResult);
-    //   return;
-    // }
+    const cachedResult = cache.get(requestPramsName);
+    if (cachedResult) {
+      response.status(200).json(cachedResult);
+      return;
+    }
     const images = await getImagesHandler(bloodCellModel.getImagesByName, requestPramsName);
     const bloodCellDescription = await getBloodCellsDescriptionByNameHandler(request);
     const result = filterData([images, bloodCellDescription]);
 
     response.status(200).json(...result);
-    // cache.set(requestPramsName, ...result, 3600);
+    cache.set(requestPramsName, ...result, 3600);
   } catch (error) {
     response.status(404).json({ error: "клетка не найдена!" });
   }
