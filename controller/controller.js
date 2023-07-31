@@ -92,8 +92,6 @@ const getImagesHandler = (modelMethod, requestParams) => {
 };
 
 export const getBloodCellsByHematopoiesisHandler = async (request, response) => {
-  console.log("qwe");
-  console.log("qwe");
   try {
     const cachedResult = cache.get(request.params.type);
     if (cachedResult) {
