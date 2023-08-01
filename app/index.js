@@ -22,4 +22,5 @@ app.get("/allCells", (request, response) => {
   getAllBloodCellsNamesHandler(request, response);
 });
 
-app.listen(PORT, () => console.log(`SERVER STARTED ON ${PORT} PORT`));
+export default app;
+// app.listen(PORT, () => console.log(`SERVER STARTED ON ${PORT} PORT`));
