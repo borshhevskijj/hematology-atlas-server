@@ -3,6 +3,18 @@
     {
       "source": "/(.*)",
       "destination": "app/index.js"
+    },
+    {
+      "source": "/allCells",
+      "destination": "app/index.js"
+    },
+    {
+      "source": "/search/(.*)",
+      "destination": "app/index.js"
+    },
+    {
+      "source": "/hematopoiesis/(.*)",
+      "destination": "app/index.js"
     }
   ]
 }
