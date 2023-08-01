@@ -1,20 +1,27 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "app/index.js"
+      "src": "app/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/hematopoiesis/(.*)",
+      "dest": "app/index.js"
     },
     {
-      "source": "/allCells",
-      "destination": "app/index.js"
+      "src": "/api/search/(.*)",
+      "dest": "app/index.js"
     },
     {
-      "source": "/search/(.*)",
-      "destination": "app/index.js"
+      "src": "/api/allCells",
+      "dest": "app/index.js"
     },
     {
-      "source": "/hematopoiesis/(.*)",
-      "destination": "app/index.js"
+      "src": "/(.*)",
+      "dest": "app/index.js"
     }
   ]
 }
