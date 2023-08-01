@@ -16,6 +16,7 @@ app.get("/hematopoiesis/:type", (request, response) => {
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   response.end(`Item: hello hematopoiesis/:type`);
+  console.log('1');
 });
 
 app.get("/search/:name", (request, response) => {
@@ -23,12 +24,14 @@ app.get("/search/:name", (request, response) => {
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   response.end(`Item: hello /search/:name`);
+  console.log('2');
 });
 
 app.get("/allCells", (request, response) => {
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   response.end(`Item: hello /allCells`);
+  console.log('3');
   // getAllBloodCellsNamesHandler(request, response);
 });
 
