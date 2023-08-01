@@ -12,21 +12,24 @@ app.use(express.static('public'))
 
 
 app.get("/hematopoiesis/:type", (request, response) => {
-  getBloodCellsByHematopoiesisHandler(request, response);
+  // getBloodCellsByHematopoiesisHandler(request, response);
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  response.end(`Item: hello hematopoiesis/:type`);
 });
 
 app.get("/search/:name", (request, response) => {
-  getBloodCellsByNameHandler(request, response);
+  // getBloodCellsByNameHandler(request, response);
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  response.end(`Item: hello /search/:name`);
 });
 
 app.get("/allCells", (request, response) => {
   response.setHeader('Content-Type', 'text/html');
   response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  getAllBloodCellsNamesHandler(request, response);
+  response.end(`Item: hello /allCells`);
+  // getAllBloodCellsNamesHandler(request, response);
 });
 
 // export default app;
