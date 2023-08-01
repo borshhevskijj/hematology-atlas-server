@@ -8,18 +8,6 @@
   ],
   "routes": [
     {
-      "src": "/api/hematopoiesis/(.*)",
-      "dest": "app/index.js"
-    },
-    {
-      "src": "/api/search/(.*)",
-      "dest": "app/index.js"
-    },
-    {
-      "src": "/api/allCells",
-      "dest": "app/index.js"
-    },
-    {
       "src": "/(.*)",
       "dest": "app/index.js"
     }
