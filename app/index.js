@@ -16,8 +16,12 @@ app.get("/search/:name", (request, response) => {
 });
 
 app.get("/allCells", (request, response) => {
-  getAllBloodCellsNamesHandler(request, response);
-  // res.send(`working!!!`);
+  // getAllBloodCellsNamesHandler(request, response);
+  res.send(`working!!!`);
+});
+
+app.listen(4000, () => {
+  console.log("Running on port 4000.");
 });
 
 export default app;
