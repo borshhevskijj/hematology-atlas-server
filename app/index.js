@@ -8,7 +8,7 @@ import cors from "cors";
 
 const app = express();
 
-app.use(express.json(), cors({ origin: "*" }));
+// app.use(express.json(), cors({ origin: "*" }));
 
 app.get("/hematopoiesis/:type", (request, response) => {
   // getBloodCellsByHematopoiesisHandler(request, response);
