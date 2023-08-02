@@ -5,12 +5,12 @@ const app = express();
 app.use(express.json(), cors({ origin: "*" }));
 
 app.get("/hematopoiesis/:type", (request, response) => {
-  response.send(`working!!! ${req.params.type}`);
+  response.send(`working!!! ${request.params.type}`);
   console.log("asd");
 });
 
 app.get("/search/:name", (request, response) => {
-  response.send(`working!!! ${req.params.name}`);
+  response.send(`working!!! ${request.params.name}`);
 });
 
 app.get("/allCells", (request, response) => {
