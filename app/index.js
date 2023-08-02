@@ -1,14 +1,9 @@
-import express from "express";
-import cors from "cors";
-// import {
-//   getBloodCellsByHematopoiesisHandler,
-//   getBloodCellsByNameHandler,
-//   getAllBloodCellsNamesHandler,
-// } from "../controller/controller.js";
-
+// import express from "express";
+const express = require("express");
+const cors = require("cors");
 const app = express();
 
-// app.use(express.json(), cors({ origin: "*" }));
+app.use(express.json(), cors({ origin: "*" }));
 
 app.get("/hematopoiesis/:type", (request, response) => {
   // getBloodCellsByHematopoiesisHandler(request, response);
