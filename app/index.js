@@ -1,4 +1,3 @@
-// import express from "express";
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -6,18 +5,16 @@ const app = express();
 app.use(express.json(), cors({ origin: "*" }));
 
 app.get("/hematopoiesis/:type", (request, response) => {
-  // getBloodCellsByHematopoiesisHandler(request, response);
-  res.send(`working!!! ${req.params.type}`);
+  response.send(`working!!! ${req.params.type}`);
+  console.log("asd");
 });
 
 app.get("/search/:name", (request, response) => {
-  // getBloodCellsByNameHandler(request, response);
-  res.send(`working!!! ${req.params.name}`);
+  response.send(`working!!! ${req.params.name}`);
 });
 
 app.get("/allCells", (request, response) => {
-  // getAllBloodCellsNamesHandler(request, response);
-  res.send(`working!!!`);
+  response.send(`working!!!`);
 });
 
 app.listen(4000, () => {
