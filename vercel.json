@@ -4,7 +4,16 @@
     {
       "src": "index.js",
       "use": "@now/node"
+    },
+    {
+      "src": "/controller/controller.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "model/model.js",
+      "use": "@now/node"
     }
+
   ],
   "routes": [
     {
