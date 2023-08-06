@@ -25,3 +25,4 @@ app.get("/hematopoiesis/:type", (request, response) => {
 // });
 
 app.listen(PORT, () => console.log(`SERVER STARTED ON ${PORT} PORT`));
+export default app;
