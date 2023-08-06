@@ -12,7 +12,7 @@ const app = express();
 // const PORT = 4000;
 app.use(express.json(), cors({ origin: "*" }));
 
-app.get("/hematopoiesis/:type", (request, response) => {
+app.get("/hematopoiesis", (request, response) => {
   // getBloodCellsByHematopoiesisHandler(request, response);
   response.send("Express on Vercel");
 });
